@@ -1,39 +1,61 @@
-const choice = ["rock", "paper", "scissors"];
+let playerScore = 0;
+let computerScore = 0;
+let draws = 0;
 
-let PlayerChoice = prompt("Choose Rock, Paper or Scissors")
 
-function PlayerSelection(PlayerChoice) {
-return PlayerChoice.toLowerCase()
+// to get computer choice
+let choices = ["rock", "paper", "scissors"];
+
+function getComputerChoice() {
+  const choose = Math.floor(Math.random() * choices.length);
+  return choices[choose];
 }
 
-const getComputerChoice = Math.floor(Math.random() * choice.length);
-console.log(getComputerChoice, choice[getComputerChoice]);
+//function to play a round
+function playRound(PlayerSelection, computerSelection) {
+  if (PlayerSelection === computerSelection) {
+    return draw;
+  } else if (PlayerSelection === "rock" && computerSelection === "scissors") {
+    return playerWinRound;
+  } else if (PlayerSelection === "scissors" && computerSelection === "paper") {
+    return playerWinRound;
+  } else if (PlayerSelection === "paper" && computerSelection === "rock") {
+    return playerWinRound;
+  } else {
+    return computerWinRound;
+  }
+}
+// setting variables which are returned
+let playerWinRound = "Player wins this round!"
+let computerWinRound = "Computer wins this round!"
+let draw = "Draw!"
+let playerWin = "Player wins the game! Congratulations!"
+let computerWin = "Computer wins the game! Congratulations!"
 
-function game (PlayerSelection,getComputerChoice) 
-{
-    if (PlayerSelection === getComputerChoice)
-    {
-    console.log("You DRAW")
+// loop to play the game. Breaks after one reaches 5
+for (let i = 0; i < 1000; i++) {
+    let playerChoice = prompt("Rock, paper, or scissors?").toLowerCase();
+    const computerSelection = getComputerChoice(); //if not inside only calls once instead of each
+    let roundResult = playRound(playerChoice, computerSelection);
+    console.log(roundResult);
+    gameScore(roundResult);
+    console.log("Your score is " + playerScore);
+    console.log("The computer's score is " + computerScore);
+  
+    if (playerScore === 5 || computerScore === 5 ) {
+      break;
     }
-    else if (PlayerSelection === "rock" && getComputerChoice === "scissors") {
-        {
-            console.log("You Win!")
-        }
+  }
+  //to keep score of game
+  function gameScore(result) {
+  
+    if (result === playerWinRound) {
+      playerScore++;
+    } else if (result === draw) {
+      draws++;
+    } else {
+      computerScore++;
     }
-    else if (PlayerSelection === "scissors") {
-        if (getComputerChoice === "paper") {
-            console.log("You Win!")
-        }
-        }
-    else if (PlayerSelection === "paper") {
-        if (getComputerChoice === "rock"){
-            console.log("You Win!")
-        }
-        }
-        else {
-            console.log("You Lose")
-        }
-    }
-
-
-
+  }  
+  
+  
