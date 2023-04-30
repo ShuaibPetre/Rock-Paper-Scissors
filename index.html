@@ -5,9 +5,47 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="myscripts.js" defer></script> 
+
 </head>
 <body>
-     <script src="myscripts.js"></script> 
+<div class="container">
+    <div class="title">
+    </div>
+    <div class="choicediv">
+        <div class="info">
+            <button id="rockbtn" type="button"> <img src="images/rock.png" height ="150" width="150" /></button>
+            <div class="text">ROCK</div>
+        </div>
+        <div class="info">
+            <button id="paperbtn" type="button"> <img src="images/paper.png" height ="150" width="150" /></button>
+            <div class="text">PAPER</div>
+        </div>
+        <div class="info">
+            <button id="scissorsbtn" type="button"> <img src="images/scissors.png" height ="150" width="150" /></button>
+            <div class="text">SCISSORS</div>
+        </div>
+    </div>
+    <div class="scorediv">
+        <div class="score">
+            <div class="scorename">YOUR SCORE</div>
+            <div class="playerscore">
+                <p>0</p>
+            </div>
+        </div>
+        <div class="score">
+            <div class="scorename">CPU SCORE</div>
+            <div class="cpuscore">
+                <p>0</p>
+            </div>
+        </div>
+    </div>
+    <div class="winnerdiv">
+        <p>YOU WIN!</p>
+    </div>
+
+</div>
     
 </body>
 </html>

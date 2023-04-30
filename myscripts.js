@@ -12,7 +12,7 @@ function getComputerChoice() {
 }
 
 //function to play a round
-function playRound(PlayerSelection, computerSelection) {
+//function playRound(PlayerSelection, computerSelection) {
   if (PlayerSelection === computerSelection) {
     return draw;
   } else if (PlayerSelection === "rock" && computerSelection === "scissors") {
@@ -32,8 +32,8 @@ let draw = "Draw!"
 let playerWin = "Player wins the game! Congratulations!"
 let computerWin = "Computer wins the game! Congratulations!"
 
-// loop to play the game. Breaks after one reaches 5
-for (let i = 0; i < 1000; i++) {
+// loop to play the game 5 times
+for (let i = 0; i < 5; i++) {
     let playerChoice = prompt("Rock, paper, or scissors?").toLowerCase();
     const computerSelection = getComputerChoice(); //if not inside only calls once instead of each
     let roundResult = playRound(playerChoice, computerSelection);
@@ -41,11 +41,8 @@ for (let i = 0; i < 1000; i++) {
     gameScore(roundResult);
     console.log("Your score is " + playerScore);
     console.log("The computer's score is " + computerScore);
-  
-    if (playerScore === 5 || computerScore === 5 ) {
-      break;
-    }
   }
+  
   //to keep score of game
   function gameScore(result) {
   
