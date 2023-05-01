@@ -12,6 +12,7 @@
 <body>
 <div class="container">
     <div class="title">
+        <h2>Rock, Paper, Scissors</h2>
     </div>
     <div class="choicediv">
         <div class="info">
@@ -27,18 +28,24 @@
             <div class="text">SCISSORS</div>
         </div>
     </div>
+    <div class="choicereturned">
+        <div class="playerReturn">
+            You:{choice}
+        </div>
+        <div class="vs">VS</div>
+        <div class="cpuReturn">
+            CPU:{choice}
+        </div>
+    </div>
     <div class="scorediv">
         <div class="score">
             <div class="scorename">YOUR SCORE</div>
-            <div class="playerscore">
-                <p>0</p>
-            </div>
+            <div id="playerscore">0</div>
         </div>
+        <div class="score"></div>
         <div class="score">
             <div class="scorename">CPU SCORE</div>
-            <div class="cpuscore">
-                <p>0</p>
-            </div>
+            <div id="cpuscore">0</div>
         </div>
     </div>
     <div class="winnerdiv">

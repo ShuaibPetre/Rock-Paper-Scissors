@@ -1,3 +1,51 @@
+body {
+    max-width: 600px
+   
+}
+.title {
+    text-align:center;
+    padding-bottom: 20px;
+}
+.container {
+    background-color: aquamarine;
+    border-style: double;
+
+}
 .choicediv {
     display: flex;
+    justify-content: space-around;
+    text-align: center;
+    padding-bottom: 20px;
+}
+.scorediv {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+}
+
+.choicereturned {
+    display: flex;
+    justify-content: space-around;
+    padding-bottom: 20px;
+}
+.winnerdiv {
+    text-align: center;
+}
+.text {
+    padding: 20px;
+}
+.playerscore {
+    background-color: lightgrey;
+    padding: 15px;
+    border: solid black 2px;
+    
+}
+.cpuscore {
+    background-color: lightgrey;
+    padding: 15px;
+    border: solid black 2px;
+    
+}
+.scorename {
+    padding-bottom: 10px;
 }
