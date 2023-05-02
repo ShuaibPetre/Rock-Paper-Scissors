@@ -11,11 +11,11 @@ body {
     border-style: double;
 
 }
-.choicediv {
+#choicediv {
     display: flex;
     justify-content: space-around;
     text-align: center;
-    padding-bottom: 20px;
+    padding-bottom: 10px;
 }
 .scorediv {
     display: flex;
@@ -26,26 +26,31 @@ body {
 .choicereturned {
     display: flex;
     justify-content: space-around;
-    padding-bottom: 20px;
+    padding-bottom: 30px;
 }
-.winnerdiv {
-    text-align: center;
-}
+
 .text {
     padding: 20px;
 }
-.playerscore {
+#playerscore {
     background-color: lightgrey;
     padding: 15px;
     border: solid black 2px;
     
 }
-.cpuscore {
+#cpuscore {
     background-color: lightgrey;
     padding: 15px;
     border: solid black 2px;
     
 }
 .scorename {
-    padding-bottom: 10px;
+    padding-bottom: 15px;
+}
+.vs {
+    text-align: center;
+}
+#winnerdiv {
+    text-align: center;
+    min-height: 30px;
 }

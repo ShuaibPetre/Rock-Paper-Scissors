@@ -1,4 +1,7 @@
-let playerScore = 0;
+let playerScore = function() {
+  i = 0;
+  return(i)
+}
 let computerScore = 0;
 let draws = 0;
 
@@ -37,24 +40,29 @@ function game(playerChoice) {
     
     const computerSelection = getComputerChoice(); //if not inside only calls once instead of each
     let roundResult = playRound(playerChoice, computerSelection);
-    console.log(roundResult);
     gameScore(roundResult);
-    console.log("Your score is " + playerScore);
-    console.log("The computer's score is " + computerScore);
+    document.getElementById("playerscore").innerHTML = playerScore;
+    document.getElementById("cpuscore").innerHTML = computerScore;
+    document.getElementById("playerReturn").innerHTML = "You: " + playerChoice;
+    document.getElementById("cpuReturn").innerHTML = "CPU: " + computerSelection;
+
   
-    //if (playerScore === 5 || computerScore === 5 ) {
+   //if (playerScore === 5 || computerScore === 5 ) {
     //  break;
-    //}
+   // }
   }
   //to keep score of game
   function gameScore(result) {
   
     if (result === playerWinRound) {
       playerScore++;
+      document.getElementById("winnerdiv").innerHTML = "YOU WIN THIS ROUND!"
     } else if (result === draw) {
       draws++;
+      document.getElementById("winnerdiv").innerHTML = "DRAW THIS ROUND!"
     } else {
       computerScore++;
+      document.getElementById("winnerdiv").innerHTML = "YOU LOSE THIS ROUND!"
     }
   }  
 
@@ -72,6 +80,10 @@ function game(playerChoice) {
   document.getElementById("scissorsbtn").addEventListener("click", function() {
     game(c);
   });
+if (playerScore === "5") {
+    const element1 = document.getElementById("choicediv");
+    element1.replaceChildren();
+  }
   
   
   
