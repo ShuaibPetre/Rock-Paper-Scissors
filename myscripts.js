@@ -1,7 +1,4 @@
-let playerScore = function() {
-  i = 0;
-  return(i)
-}
+let playerScore = 0
 let computerScore = 0;
 let draws = 0;
 
@@ -55,15 +52,22 @@ function game(playerChoice) {
   function gameScore(result) {
   
     if (result === playerWinRound) {
-      playerScore++;
+      if (playerScore++ === 4) {
+        const overlayWin = document.querySelector("#overlayWin");
+        overlayWin.style.display = "block";
+      }
       document.getElementById("winnerdiv").innerHTML = "YOU WIN THIS ROUND!"
     } else if (result === draw) {
       draws++;
       document.getElementById("winnerdiv").innerHTML = "DRAW THIS ROUND!"
     } else {
-      computerScore++;
+      if (computerScore++ === 4) {
+        const overlayLose = document.querySelector("#overlayLose");
+        overlayLose.style.display = "block";
+      }
       document.getElementById("winnerdiv").innerHTML = "YOU LOSE THIS ROUND!"
     }
+    
   }  
 
   //changes affecting UI - updated version
@@ -80,10 +84,28 @@ function game(playerChoice) {
   document.getElementById("scissorsbtn").addEventListener("click", function() {
     game(c);
   });
-if (playerScore === "5") {
-    const element1 = document.getElementById("choicediv");
-    element1.replaceChildren();
-  }
+  
+const winbtn = document.querySelector('#winbtn');
+  winbtn.addEventListener('click', () => {
+    const overlayWin = document.querySelector("#overlayWin");
+    overlayWin.style.display = "none";
+    playerScore = 0;
+    computerScore = 0;
+    document.getElementById("playerscore").innerHTML = playerScore;
+    document.getElementById("cpuscore").innerHTML = computerScore;
+
+});
+const losebtn = document.querySelector('#losebtn');
+  losebtn.addEventListener('click', () => {
+    const overlayLose = document.querySelector("#overlayLose");
+    overlayLose.style.display = "none";
+    playerScore = 0;
+    computerScore = 0;
+    document.getElementById("playerscore").innerHTML = playerScore;
+    document.getElementById("cpuscore").innerHTML = computerScore;
+});
+  
+
   
   
   

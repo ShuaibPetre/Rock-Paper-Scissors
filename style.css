@@ -1,14 +1,16 @@
 body {
-    max-width: 600px
-   
+    max-width: 700px;
+    margin: auto;
 }
 .title {
     text-align:center;
     padding-bottom: 20px;
+    margin: auto;
 }
 .container {
     background-color: aquamarine;
     border-style: double;
+    max-width: 700px;
 
 }
 #choicediv {
@@ -53,4 +55,64 @@ body {
 #winnerdiv {
     text-align: center;
     min-height: 30px;
+}
+
+#overlayWin {
+    max-width: 750px;
+    display: none;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+#modalWin {
+    width: 300px;
+    height: 150px;
+    margin: auto;
+    background-color: white;
+    position: absolute;
+    top: 0;
+    bottom: 100px;
+    left: 0;
+    right: 0;
+    text-align: center;
+}
+.btn {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    border-radius: 12px;
+    border-style: double;
+    border-color: black;
+  }
+  #overlayLose {
+    max-width: 750px;
+    display: none;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+#modalLose {
+    width: 300px;
+    height: 150px;
+    margin: auto;
+    background-color: white;
+    position: absolute;
+    top: 0;
+    bottom: 100px;
+    left: 0;
+    right: 0;
+    text-align: center;
 }
